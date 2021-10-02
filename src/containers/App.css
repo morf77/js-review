@@ -1,0 +1,25 @@
+.App {
+  text-align: center;
+}
+.d-none{
+  display: none;
+}
+.d-block{
+  display: block;
+  padding:20px;
+  box-shadow:1px 1px 40px 10px blue inset;
+}
+.nav-shadow{
+  box-shadow:1px 1px 40px 10px rgba(133, 210, 255, 0.486) ;
+}
+.titleShow{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow:1px 1px 40px 10px blue ;
+
+}
+.imgShadow{
+  box-shadow:1px 1px 40px 10px blue;
+}

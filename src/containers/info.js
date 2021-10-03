@@ -961,6 +961,9 @@ export const info =[
                 To create a new map, you must use the Map constructor function and the new operator.`
             },
             {
+                p:`A Map is ordered and iterable, whereas a objects is not ordered and not iterable. We can put any type of data as a Map key, whereas objects can only have a number, string, or symbol as a key. A Map inherits from Map. prototype .`
+            }
+            {
                 p:`let myMap = new Map();`
             },
             {

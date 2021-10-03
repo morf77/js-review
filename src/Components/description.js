@@ -3,7 +3,7 @@ import React from 'react';
 const Description = ({id,title,text,mysource})=>{
     return(
         <div className="lightest-blue tl flip-left">
-            <h1 className="titleShow bt">{`${id}) ${title}`}</h1>
+            <h1 className="titleShow bt">{` ${id}) ${title}`}</h1>
             <div className="d-none">
                 <img className="w-40 fr myanimation imgShadow ml3 br4" alt="." src={`${mysource}`} />
                 {text.map((item,i)=>{

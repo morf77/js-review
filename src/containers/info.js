@@ -372,12 +372,447 @@ export const info =[
             {
                 h:"console.log",
                 p:`If you do not know this, you are no different from algae`
+            },
+            {
+                h:"All JavaScript objects have a toString() method."
             }
         ],
         mysource:"http://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2019/09/JavaScript-Methods.jpg"
     },
     {
         id:"8",
+        title:"Arrays",
+        text:[
+            {
+                h:"making arrays",
+                p:"you know the simple way but another way is using constructor function :let newArray = new Array(value1 , value2 , value3 , ...);"
+            },
+            {
+                p:"notice that in arrays we can have value of undifined!!!then if you see undifined it have 2 seprate meanings"
+            },
+            {
+                h:"shift",
+                p:`The shift() method removes the first array element and "shifts" all other elements to a lower index.The shift() method returns the value that was "shifted out":`
+            },
+            {
+                h:"unshift()",
+                p:`The unshift() method adds a new element to an array (at the beginning), and "unshifts" older 
+                elements: The unshift() method returns the new array length.`
+            },
+            {
+                h:"join()",
+                p:"The join() method also joins all array elements into a string."
+            },
+            {
+                h:"toString()",
+                p:"The JavaScript method toString() converts an array to a string of (comma separated) array values."
+            },
+            {
+                h:"pop",
+                p:"The pop() method removes the last element from an array:The pop() method returns the value that was popped out:"
+            },
+            {
+                h:"push",
+                p:"The push() method adds a new element to an array (at the end):The push() method returns the new array length:"
+            },
+            {
+                h:"lentgth",
+                p:"The length property is always one more than the highest array index."
+            },
+            {
+                h:"delete",
+                p:"Since JavaScript arrays are objects, elements can be deleted by using the JavaScript operator delete"
+            },
+            {
+                p:`const tarebar = ["khiar", "karafs", "limoo", "moz"];`
+            },
+            {
+                p:"delete tarebar[0];"
+            },
+            {
+                p:"the first fruit will be undifined"
+            },
+            {
+                p:"Using delete may leave undefined holes in the array. Use pop() or shift() instead."
+            },
+            {
+                h:"splice",
+                p:"The splice() method can be used to add new items to an array:"
+            },
+            {
+                p:`const fruits = ["Banana", "Orange", "Apple", "Mango"];`
+            },
+            {
+                p:`fruits.splice(2, 0, "Lemon", "Kiwi");`
+            },
+            {
+                p:`fruits => [Banana,Orange,Lemon,Kiwi,Apple,Mango]`
+            },
+            {
+                p:`The first parameter (2) defines the position where new elements should be added
+                 (spliced in).
+                The second parameter (0) defines how many elements should be removed.
+                The rest of the parameters ("Lemon" , "Kiwi") define the new elements to be added.`
+            },
+            {
+                h:"we can use this method to remove elements from arrays with fill in the first 2 arguments"
+            },
+            {
+                h:"concat",
+                p:`The concat() method creates a new array by merging (concatenating) 
+                existing arrays:The concat() method does not change the existing arrays. It always
+                 returns a new array.The concat() method can also take strings as arguments:`
+            },
+            {
+                h:"slice",
+                p:`The slice() method slices out a piece of an array into a new array.`
+            },
+            {
+                p:`const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];`
+            },
+            {
+                p:`const citrus = fruits.slice(1);`
+            },
+            {
+                p:`citrus=>[Orange,Lemon,Apple,Mango]`
+            },
+            {
+                p:"The slice() method creates a new array. It does not remove any elements from the source array."
+            },
+            {
+                p:"The slice() method can take two arguments like slice(1, 3)."
+            },
+            {
+                p:"The method then selects elements from the start argument, and up to (but not including) the end argument."
+            },
+            {
+                h:"sort",
+                p:"The sort() method sorts an array alphabetically:"
+            },
+            {
+                p:`By default, the sort() function sorts values as strings.
+                This works well for strings ("Apple" comes before "Banana").                
+                However, if numbers are sorted as strings, "25" is bigger than "100", because "2" is bigger 
+                than "1".                
+                Because of this, the sort() method will produce incorrect result when sorting numbers.`
+            },
+            {
+                p:`You can fix this by providing a compare function:The sort() method accepts an optional argument which is a function that compares two elements of the array.`
+            },
+            {
+                p:`The compare() function accepts two arguments a and b. The sort() method will sort 
+                elements based on the return value of the compare() function with the following rules:
+                 1)If compare(a,b) is less than zero, the sort() method sorts a to a lower index than b. In 
+                other words, a will come first.
+                 2)If compare(a,b) is greater than zero, the sort() method sort b to a lower index than a, i.e.,
+                 b will come first.
+                 3)If compare(a,b) returns zero, the sort() method considers a equals b and
+                 leaves their positions unchanged.`
+            },
+            {
+                p:`const points = [40, 100, 1, 5, 25, 10];`
+            },
+            {
+                p:`points.sort(function(a, b){return a - b});`
+            },
+            {
+                p:`default function is:
+                function (a, b) {
+                    let x = a.toUpperCase(),
+                        y = b.toUpperCase();
+                    return x == y ? 0 : x > y ? 1 : -1;`
+            },
+            {
+                h:"Sorting an array of strings with non-ASCII characters",
+                p:`The sort() method is working fine with the strings with ASCII characters. However, for the strings with non-ASCII characters e.g., é, è, etc., the sort() method will not work correctly. For example:`
+            },
+            {
+                p:`let animaux = ['zèbre', 'abeille', 'écureuil', 'chat'];`
+            },
+            {
+                p:"animaux.sort();"
+            },
+            {
+                p:"console.log(animaux);"
+            },
+            {
+                p:"As you see, the écureuil string should come before the zèbre string."
+            },
+            {
+                p:`The localeCompare() method returns a number indicating whether a reference string comes before, or after, or is the same as the given string in sort order.`
+            },
+            {
+                p:"To resolve this, you use the localeCompare() method of the String object to compare strings in a specific locale, like this:"
+            },
+            {
+                p:`animaux.sort(function (a, b) {
+                    return a.localeCompare(b);
+                });`
+            },
+            {
+                p:`output:[ 'abeille', 'chat', 'écureuill', 'zèbree' ]`
+            },
+            {
+                h:'Sorting an array of objects by a specified property',
+                p:`let employees = [
+                    {name: 'John', salary: 90000, hireDate: "July 1, 2010"},
+                    {name: 'David', salary: 75000, hireDate: "August 15, 2009"},
+                    {name: 'Ana', salary: 80000, hireDate: "December 12, 2011"}
+                ];`
+            },
+            {
+                p:"The following example shows how to sort the employees by salary in ascending order."
+            },
+            {
+                p:`employees.sort(function (x, y) {
+                    return x.salary - y.salary;
+                });`
+            },
+            {
+                h:"Optimizing JavaScript Array sort() method",
+                p:`In fact, the sort() method calls the compare function multiple times for each element in the array.
+                See the following example:`
+            },
+            {
+                p:`let rivers = ['Nile', 'Amazon', 'Congo', 'Mississippi', 'Rio-Grande'];`
+            },
+            {
+                p:`rivers.sort(function (a, b) {
+                    console.log(a, b);
+                    return a.length - b.length;
+                });`
+            },
+            {
+                p:`output:Amazon Nile
+                Congo Amazon
+                Congo Amazon
+                Congo Nile
+                Mississippi Congo
+                Mississippi Amazon
+                Rio-Grande Amazon
+                Rio-Grande Mississippi`
+            },
+            {
+                h:"how sort works?",
+                p:`First, declare an array rivers that consists of the famous river names.
+                Second, sort the rivers array by the length of its element using the sort() method. We 
+                output the elements of the rivers array to the web console whenever the sort() method 
+                invokes the comparison function .`
+            },
+            {
+                p:"As shown in the output above, each element has been evaluated multiple times e.g., Amazon 4 times, Congo 2 times, etc."
+            },
+            {
+                p:`If the number of array elements is increasing, it will potentially decrease the performance.`
+            },
+            {
+                p:`You cannot reduce the number of times that comparison function is executed. However, you 
+                can reduce the work that the comparison has to do. This technique is called Schwartzian 
+                Transform`
+            },
+            {
+                p:`To implement this, you follow these steps:`
+            },
+            {
+                p:"First, extract the actual values into a temporary array using the map() method."
+            },
+            {
+                p:`Second, sort the temporary array with the elements that are already evaluated (or transformed).`
+            },
+            {
+                p:`Third, walk the temporary array to get an array with the right order.`
+            },
+            {
+                h:"example code is:",
+                p:`// temporary array holds objects with position`
+            },
+            {
+                p:"// and length of element"
+            },
+            {
+                p:"var lengths = rivers.map(function (e, i) {"
+            },
+            {
+                p:`    return {index: i, value: e.length };});`
+            },
+            {
+                p:"// sorting the lengths array containing the lengths of"
+            },
+            {
+                p:"// river names"
+            },
+            {
+                p:"lengths.sort(function (a, b) {"
+            },
+            {
+                p:"    return +(a.value > b.value) || +(a.value === b.value) - 1;"
+            },
+            {
+                p:"});"
+            },
+            {
+                p:"// copy element back to the array"
+            },
+            {
+                p:"var sortedRivers = lengths.map(function (e) {"
+            },
+            {
+                p:"    return rivers[e.index];"
+            },
+            {
+                p:"});"
+            },
+            {
+                p:`console.log(sortedRivers);`
+            },
+            {
+                h:"reverse",
+                p:`The reverse() method reverses the elements in an array.`
+            },
+            {
+                h:"copyWithin()",
+                p:`The copyWithin() method copies array elements to another position in an array, 
+                overwriting the existing values.
+                The copyWithin() does not add items to the array.
+                copyWithin() overwrites the original array.`
+            },
+            {
+                p:"array.copyWithin(target, start, end)"
+            },
+            {
+                h:"entries",
+                p:`The entries() method returns an Array Iterator object with key/value pairs.`
+            },
+            {
+                p:"For each item in the original array, the new iteration object will contain an array with the index as the key, and the item value as the value"
+            },
+            {
+                p:"entries() does not change the original array."
+            },
+            {
+                p:"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators"
+            },
+            {
+                h:"every",
+                p:`The every() method returns true if all elements in an array pass a test (provided as a function).`
+            },
+            {
+                p:"The method executes the function once for each element present in the array:"
+            },
+            {
+                p:"If it finds an array element where the function returns a false value, every() returns false (and does not check the remaining values)"
+            },
+            {
+                p:`If no false occur, every() returns true`
+            },
+            {
+                p:`every() does not execute the function for empty array elements.`
+            },
+            {
+                p:`every() does not change the original array`
+            },
+            {
+                p:"array.every(function(currentValue, index, arr), thisValue)"
+            },
+            {
+                p:`thisValue:Optional. A value to be passed to the function to be used as its "this" value.
+                If this parameter is empty, the value "undefined" will be passed as its "this" value`
+            },
+            {
+                h:'fill',
+                p:`The fill() method fills specified elements in an array with a static value.
+                You can specify the position of where to start and end the filling. If not specified, 
+                all elements will be filled.
+                fill() overwrites the original array.`
+            },
+            {
+                p:"array.fill(value, start, end)"
+            },
+            {
+                h:"filter",
+                p:`The filter() method creates an array filled with all 
+                array elements that pass a test (provided by a function).
+                filter() does not execute the function for empty array elements.
+                filter() does not change the original array.`
+            },
+            {
+                p:"array.filter(function(currentValue, index, arr), thisValue)"
+            },
+            {
+                h:"find",
+                p:`The find() method returns the value of the array element that passes a test (provided by a function).
+                The method executes the function once for each element present in the array:
+                If it finds an array element where the function returns a true value, find() returns the value of 
+                that array element (and does not check the remaining values)
+                Otherwise it returns undefined
+                find() does not execute the function for empty array elements.
+                find() does not change the original array.`
+            },
+            {
+                p:"array.find(function(currentValue, index, arr),thisValue)"
+            },
+            {
+                h:"findIndex",
+                p:`The findIndex() method returns the index of the first array element that passes a 
+                test (provided by a function).
+                The method executes the function once for each element present in the array:
+                If it finds an array element where the function returns a true value, findIndex() returns the 
+                index of that array 
+                element (and does not check the remaining values)
+                Otherwise it returns -1
+                findIndex() does not execute the function for empty array elements.
+                findIndex() does not change the original array.`
+            },
+            {
+                h:"forEach",
+                p:`The forEach() method calls a function once for each element in an array, in order.
+                forEach() is not executed for array elements without values.`
+            },
+            {
+                p:"array.forEach(function(currentValue, index, arr), thisValue)"
+            },
+            {
+                h:"from",
+                p:`The from() method returns an Array object from any object with a length property or any iterable object.`
+            },
+            {
+                p:"Array.from(object, mapFunction, thisValue)"
+            },
+            {
+                p:"mapFunction	Optional. A map function to call on each item of the array"
+            },
+            {
+                h:"reduceRight",
+                p:`The reduceRight() method executes a reducer function for each value of an array , from right to left.
+
+                reduceRight() returns a single value which is the function's accumulated result.
+                
+                reduceRight() does not execute the function for empty array elements.`
+            },
+            {
+                p:"array.reduceRight(function(total, currentValue, currentIndex, arr), initialValue)"
+            },
+            {
+                h:"some",
+                p:`The some() method checks if any of the elements in an array pass a test (provided as a function).
+
+                some() executes the function once for each element in the array:
+                
+                If it finds an array element where the function returns a true value, some() returns true (and does not check the remaining values)
+                Otherwise it returns false
+                some() does not execute the function for empty array elements.
+                
+                some() does not change the original array.`
+            },
+            {
+                p:"array.some(function(currentValue, index, arr), thisValue)"
+            }
+
+        ],
+        mysource:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSR5wrFxDtRGxzXaJQ8y2eFI2kJSoWbjdPPw&usqp=CAU"
+    },
+    {
+        id:"9",
         title:"Sets",
         text:[
             {
@@ -514,7 +949,7 @@ export const info =[
         mysource:"data:image/jpeg;base64,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"
     },
     {
-        id:"9",
+        id:"10",
         title:"Maps",
         text:[
             {
@@ -589,7 +1024,7 @@ export const info =[
         mysource:"data:image/jpeg;base64,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"
     },
     {
-        id:"10",
+        id:"11",
         title:"Number",
         text:[
             {
@@ -658,18 +1093,40 @@ export const info =[
         ],
         mysource:"https://i.ytimg.com/vi/CqJZeUZX5mk/maxresdefault.jpg"
     },
-    {
-        id:"",
-        title:"",
-        text:[],
-        mysource:""
-    },
-    {
-        id:"",
-        title:"",
-        text:[],
-        mysource:""
-    },
-    
 
+    {
+        id:"12",
+        title:"setTimeout",
+        text:[
+            {
+                h:"how it works?",
+                p:"The setTimeout() method calls a function or evaluates an expression after a specified number of milliseconds."
+            },
+            {
+                p:"do you think this works?"
+            },
+            {
+                p:" function work(){"
+            },
+            {
+                p:`let a="hi"`
+            },
+            {
+                p:`setTimeout(function(a){console.log(a)},1000)`
+            },
+            {
+                p:"}"
+            },
+            {
+                p:"work()"
+            }
+        ],
+        mysource:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaljlCyLaeVARJIZI_Jq6tJOLkxAjFQYucTg&usqp=CAU"
+    },   
+    {
+        id:"12",
+        title:"compose",
+        text:[],
+        mysource:""
+    }
 ]
